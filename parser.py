@@ -1,5 +1,3 @@
-#! /usr/bin/env python
-
 def questions():
     f = open('questions.txt', 'rU')
     s = f.read()
