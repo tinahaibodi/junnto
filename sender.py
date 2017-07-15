@@ -28,6 +28,7 @@ def generateText():
     return string
 
 def check(answer):
+    #send a response
     if(answer == ans):
         return "You are correct!"
     else:
