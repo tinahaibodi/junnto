@@ -1,0 +1,43 @@
+import sys, errno
+from flask import Flask, request, redirect
+from twilio.twiml.messaging_response import MessagingResponse
+from sender import generateText
+app = Flask(__name__)
+
+global expecting_resp
+
+def questions():
+    f = open('questions.txt', 'rU')
+    s = f.read()
+    qlist = s.split('\n\n')
+    for i in range(len(qlist)):
+        q = qlist[i]
+        qlist[i] = q.split('\n')
+    return qlist
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+@app.route("/sms", methods=['GET', 'POST'])
+def sms():
+    from_number = request.values.get('From', None)
+    from_body = request.values.get('Body', None)
+    resp = MessagingResponse()
+    if not from_number in expecting_resp:
+        q = generateText()
+        a = q[1]
+        q = q[0]
+        resp.message(q)
+        expecting_resp[from_number] = a
+    else:
+        if str(from_body[0]) == str(expecting_resp[from_number]):
+            resp.message('That\'s correct!')
+        else:
+            resp.message('That\'s incorrect. The correct answer was %s' % (expecting_resp[from_number]))
+        del expecting_resp[from_number]
+    return str(resp)
+    
+if __name__ == "__main__":
+    expecting_resp = {}
+    app.run(debug=True)

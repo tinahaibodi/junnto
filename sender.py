@@ -25,7 +25,7 @@ def generateText():
         string += str(n) + ") " + qlist[x][e] + "\n"
         n += 1
 
-    return string
+    return [string,ans]
 
 def check(answer):
     if(answer == ans):
