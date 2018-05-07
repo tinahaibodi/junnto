@@ -20,3 +20,5 @@ We learned that although sometimes it simpler to default to the most redundant i
 
 ## What's next for JUNTO
 We believe that JUNTO can ultimately grow into an intergovernmental organization supported by the U.S. Immigration Services and Border Control. By providing a proficient service that simplifies the educational process of immigrants preparing for the naturalization test, the U.S. government can state that is legally provided all the services to citizens to succeed in passing the test, alongside helping many immigrants achieve citizenship free of charge.
+
+<a href="http://tinypic.com?ref=2dtrezb" target="_blank"><img src="http://i64.tinypic.com/2dtrezb.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
